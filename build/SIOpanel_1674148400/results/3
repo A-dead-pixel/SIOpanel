@@ -1,0 +1,5 @@
+time="2023-01-19T18:13:28+01:00" level=warning msg="The \"OIOIOI_VERSION\" variable is not set. Defaulting to a blank string."
+time="2023-01-19T18:13:28+01:00" level=warning msg="The \"OIOIOI_VERSION\" variable is not set. Defaulting to a blank string."
+time="2023-01-19T18:13:28+01:00" level=warning msg="The \"OIOIOI_CONCURRENCY\" variable is not set. Defaulting to a blank string."
+time="2023-01-19T18:13:28+01:00" level=warning msg="The \"OIOIOI_RAM\" variable is not set. Defaulting to a blank string."
+service "web" has neither an image nor a build context specified: invalid compose project

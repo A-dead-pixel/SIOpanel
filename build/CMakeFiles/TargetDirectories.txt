@@ -1,0 +1,4 @@
+/src/SIOpanel/build/CMakeFiles/SIOpanel-lib.dir
+/src/SIOpanel/build/CMakeFiles/SIOpanel.dir
+/src/SIOpanel/build/CMakeFiles/edit_cache.dir
+/src/SIOpanel/build/CMakeFiles/rebuild_cache.dir

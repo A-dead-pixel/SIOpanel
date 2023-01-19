@@ -1,0 +1,403 @@
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W005) URL namespace 'contest:oioioiadmin' isn't unique. You may not be able to reverse all URLs in this namespace
+<QuerySet ['grupa_e', 'zestawy-zadan', 'rozek', 'test', 'grupa_a', 'grupa_d', 'grupa_c', 'indywidualny08-sj', 'grupa_b', 'indywidualny08-wr', 'grupa-e', 'indywdualne08-ot', 'jakub-choma', 'd', 'c', 'b', 'a', 'indywidualny', 'runda-probna']>
+--- Recalculating scores in contest grupa_e
+
+--- Updating  Char (cha)
+--- Updating  Cukierki (cuk)
+--- Updating  Cytryny (cyt)
+--- Updating  Równolatkowie? (czy)
+--- Updating  Dwa razy Większa (drw)
+--- Updating  Gruszki (gru)
+--- Updating  Mniejsza o Pięć (mop)
+--- Updating  Reszta z Dzielenia przez Trzy (rdt)
+--- Updating  Suma Dwóch (smd)
+--- Updating  Większa o Siedem (wos)
+--- Updating  Buty (adk)
+--- Updating  Cytryny (cyt)
+--- Updating  Dzielone na Trzy (dnt)
+--- Updating  Auta (dot)
+--- Updating  Dwójki (dwa)
+--- Updating  Dzielnik (dzi)
+--- Updating  Filatelista Kacper (fil)
+--- Updating  Jagody (jag)
+--- Updating  Następna Nieparzysta (nsn)
+--- Updating  Suma trzech (sut)
+--- Updating  Figury Szachowe (fig)
+--- Updating  Ile Liter? (ile)
+--- Updating  Ciąg Malejący (mal)
+--- Updating  Nauka Liczenia (nau)
+--- Updating  Nieparzyste (nie)
+--- Updating  Oblicz Odwrotność Liczby (oli)
+--- Updating  Jaki to Kąt? (opr)
+--- Updating  Oblicz Procent (pdl)
+--- Updating  Ciąf Rosnący? (ros)
+--- Updating  Określ Znak Relacji (zna)
+--- Updating  Bok kwadratu (bok)
+--- Updating  Kolory (kol)
+--- Updating  Kredki (kre)
+--- Updating  Następna Parzysta (nsp)
+--- Updating  Numer i Wartość Największej (nur)
+--- Updating  Ocieplenie okna (oci)
+--- Updating  O ile Dłuższa? (oid)
+--- Updating  Okręgi Olimpijskie (okr)
+--- Updating  Regały (reg)
+--- Updating  Największa (wln)
+--- Updating  Dwie Największe (dnw)
+--- Updating  Kubełki (kub)
+--- Updating  Literki Rosnąco (lpr)
+--- Updating  Następna Podzielna przez K (npk)
+--- Updating  Odległosc (odl)
+--- Updating  Od Tyułu (odt)
+--- Updating  Odwrócony Trójkąt (ott)
+--- Updating  Liczba - znany Procent (zpl)
+--- Updating  Ulamek na Procent (zup)
+--- Updating  Ułamek na Promil (zur)
+--- Updating  Krawędzie Sześcianu (dks)
+--- Updating  Login (ile)
+--- Updating  Objętość Prostopadłościanu (obp)
+--- Updating  Objętość Sześcianu (osz)
+--- Updating  Obwód Wielokąta Foremnego (owf)
+--- Updating  Pole Rombu (prm)
+--- Updating  Butelkowanie Soku (scz)
+--- Updating  Spalanie (spl)
+--- Updating  Trójkąt z T (trt)
+--- Updating  Wycieczka (wcc)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest zestawy-zadan
+
+--- Updating  Malowanie (mal)
+--- Updating  Mosty (mos)
+--- Updating  Pasterze (pst)
+--- Updating  Papryka (prk)
+--- Updating  Oswietlenie wielokata (swl)
+--- Updating  Ser z papryką (szp)
+--- Updating  Kopiowanie plikow (kpl)
+--- Updating  Lodzie rybackie (lrb)
+--- Updating  Waga lancucha (wgl)
+--- Updating  Swiatla (swi)
+--- Updating  Trzy Kolory (ttk)
+--- Updating  ZOO (zoo)
+--- Updating  Podroz (pod)
+--- Updating  Trener (trn)
+--- Updating  Zadowoleni (zap)
+--- Updating  Ciecie drzewa (cdr)
+--- Updating  Histogram 3D (hst)
+--- Updating  Tenis (ten)
+--- Updating  Indeks (ind)
+--- Updating  Oswietlenie dolin (osd)
+--- Updating  Pary podobne (pdp)
+--- Updating  Palindromy (pln)
+--- Updating  Radio (rad)
+--- Updating  Wybory (wbr)
+--- Updating  Jagniecina (jgn)
+--- Updating  Pudelka z czekoladkami (pzc)
+--- Updating  Wszystkie wlaczone (wsw)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest rozek
+
+--- Updating  Trojaczki (trj)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest test
+
+--- Updating  Biegi uliczne (bgl)
+--- Updating  Kodowanie (kod)
+--- Updating  Kodowanie (kod)
+--- Updating  Kulki (kul)
+--- Updating  Misie (mis)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest grupa_a
+
+--- Updating  Lego (leg)
+--- Updating  Milosny wielokat (mwl)
+--- Updating  Nawiasy (naw)
+--- Updating  Budujemy mosty (bui)
+--- Updating  Poscig Mariusza (cha)
+--- Updating  Palindromiczny podzial (pal)
+--- Updating  Poprawne trasy (ppt)
+--- Updating  k-różnorodne liczby (sum)
+--- Updating  Wiadomość (wia)
+--- Updating  Wybieranko (dag)
+--- Updating  Kolorowanie (kol)
+--- Updating  Wiosenne porządki (wsp)
+--- Updating  Kolorowe obrazy (klb)
+--- Updating  Odwiedziny (odw)
+--- Updating  Roznorodnosc (rzr)
+--- Updating  Kuchnia Toma (ktm)
+--- Updating  Rury (pip)
+--- Updating  Zawody (zwd)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest grupa_d
+
+--- Updating  Maksymalna roznica (akc)
+--- Updating  Najmniejsza grupa (njg)
+--- Updating  Rowerzysci (rwr)
+--- Updating  Gruszki (gru)
+--- Updating  Przekreślona liczba (plc)
+--- Updating  Laba (ryz)
+--- Updating  Ile kwadratow ? (ilk)
+--- Updating  Od Wiekszej (ode)
+--- Updating  Trojkat Rownoboczny (trb)
+--- Updating  Biegajacy pies (bie)
+--- Updating  Liczby pierwsze (lip)
+--- Updating  Szachownica I (szc)
+--- Updating  Czytelniczka Kasia (czy)
+--- Updating  Rzucanie koscia (rck)
+--- Updating  Transport (trn)
+--- Updating  Bierki (bie)
+--- Updating  K najwiekszych (kzl)
+--- Updating  Maska (mas)
+--- Updating  (nie)podzielne (pod)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest grupa_c
+
+--- Updating  Gory (gor)
+--- Updating  Ostroslupy i graniastoslupy (oig)
+--- Updating  Ile zer na koncu (zer)
+--- Updating  Czesc wspolna zbiorow (cwz)
+--- Updating  Para liczb (par)
+--- Updating  Szachy (sza)
+--- Updating  Komunikacja (kom)
+--- Updating  Podatki (pdt)
+--- Updating  Sklej liczby (skl)
+--- Updating  KOD (kod)
+--- Updating  Najdalsze komnaty (naj)
+--- Updating  Trójki (tro)
+--- Updating  Bank (bnk)
+--- Updating  Hodowla ryb (hdr)
+--- Updating  Kwadraty (kwa)
+--- Updating  Dziwny fortepian (dfr)
+--- Updating  Kolorowanki (klr)
+--- Updating  (nie)podzielne (pod)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest indywidualny08-sj
+
+--- Updating  Papryka (prk)
+--- Updating  Oswietlenie wielokata (swl)
+--- Updating  Ser z papryką (szp)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest grupa_b
+
+--- Updating  Miasta (mst)
+--- Updating  Najdluzsza sekwencja (nds)
+--- Updating  Odbudowa Bajtocji (odb)
+--- Updating  Kodowanie (kod)
+--- Updating  Kulki (kul)
+--- Updating  Misie (mis)
+--- Updating  Historia pewnej wyspy (hpw)
+--- Updating  Sieć (sie)
+--- Updating  Talent (tal)
+--- Updating  Biegi uliczne (bgl)
+--- Updating  Krzyżak (krz)
+--- Updating  MiniMax (min)
+--- Updating  Automorfizmy (aut)
+--- Updating  Ciąg monotoniczny (mon)
+--- Updating  Ołtarze (olt)
+--- Updating  Wedrowki gorskie (gor)
+--- Updating  Kuchnia Toma (ktm)
+--- Updating  Podział (pod)
+--- Updating  Zuczki (zuc)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest indywidualny08-wr
+
+--- Updating  Malowanie (mal)
+--- Updating  Mosty (mos)
+--- Updating  Pasterze (pst)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest grupa-e
+
+--- Updating  Suma trzech (sut)
+--- Updating  Większa o 7 (wos)
+--- Updating  Duża Liczba (qwb)
+--- Updating  Oblicz Różnicę (roz)
+--- Updating  Najmniejsza z Sumy (nsk)
+--- Updating  Suma 2 Kolejnych (sdm)
+--- Updating  Suma 5 Parzystych (skp)
+--- Updating  Koledzy (kol)
+--- Updating  Numer Najmniejszej (nln)
+--- Updating  Numer i Wartość Najmniejszej (num)
+--- Updating  Parzysta - Nieparzysta? (pan)
+--- Updating  N Plusów (plu)
+--- Updating  Nowy Szyld (szy)
+--- Updating  Najmniejsza z Trzech (wcz)
+--- Updating  Wporzo Liczba (wpo)
+--- Updating  Wypisz literki alfabetu parami rosnąco (dlp)
+--- Updating  Literki na Parzystych (par)
+--- Updating  Drugi Składnik (skl)
+--- Updating  Buty (adk)
+--- Updating  Cyfry Rzymskie (cfr)
+--- Updating  Trójkąt? (cmt)
+--- Updating  Działanie Dodawania (dod)
+--- Updating  Liczba Arabska (frc)
+--- Updating  Podzielna przez 3? (ptr)
+--- Updating  U Kowala (uko)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest indywdualne08-ot
+
+--- Updating  Podroz (pod)
+--- Updating  Trener (trn)
+--- Updating  Zadowoleni (zap)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest jakub-choma
+
+--- Updating  Bierki (bie)
+--- Updating  K najwiekszych (kzl)
+--- Updating  Maska (mas)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest d
+
+--- Updating  Koledzy (kld)
+--- Updating  Kamyki (kmk)
+--- Updating  Najmniejsza liczba (lic)
+--- Updating  Biegajacy pies (bie)
+--- Updating  Gory i doliny (grd)
+--- Updating  Halloween (hal)
+--- Updating  Odcinki (odc)
+--- Updating  Biedronka (bdr)
+--- Updating  Karty (kar)
+--- Updating  Ksiazki (ksk)
+--- Updating  Czytelniczka Kasia (czy)
+--- Updating  Grzyby (grz)
+--- Updating  Ratownik (rat)
+--- Updating  Czarne Barany (drw)
+--- Updating  Rzucanie koscia (rck)
+--- Updating  Spiew (spi)
+--- Updating  Ciągi 2-cykliczne (cdw)
+--- Updating  Drzewa k-wywazone (kww)
+--- Updating  Najmniejsza na Wierzcholku (lnt)
+--- Updating  Ile sum (lsm)
+--- Updating  Na ile czesci podzielic placek ? (nai)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest c
+
+--- Updating  Inwersje (inw)
+--- Updating  Kostki domina (ksd)
+--- Updating  Park (par)
+--- Updating  Kalendarze (kal)
+--- Updating  Program (pro)
+--- Updating  Zegar (zgr)
+--- Updating  Plansza (pln)
+--- Updating  Ranking (rnk)
+--- Updating  Wielka Firma (wfr)
+--- Updating  Liczby doskonale (dsk)
+--- Updating  Pozar (poz)
+--- Updating  Tarasy (tar)
+--- Updating  MAGNESY (mag)
+--- Updating  Prosty plecak (prp)
+--- Updating  Trawnik (trw)
+--- Updating  Kopalnie SBP (kpl)
+--- Updating  Drzewa k-wywazone (kww)
+--- Updating  Ile sum (lsm)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest b
+
+--- Updating  Aquapark (aqu)
+--- Updating  Autobusy (aut)
+--- Updating  Zajakniecia (zaj)
+--- Updating  Bardzo stara gra (bsg)
+--- Updating  Lekcje (lek)
+--- Updating  Wielkie grzyby (wig)
+--- Updating  Autostrady (aut)
+--- Updating  Rosnace liczby (rsl)
+--- Updating  Wybory (wyb)
+--- Updating  Cukierki (cuk)
+--- Updating  Względnie pierwsze (wgp)
+--- Updating  Zestaw klockow (zkl)
+--- Updating  Kartki (krt)
+--- Updating  Woda (wod)
+--- Updating  Zachody Slonca (zac)
+--- Updating  Drzewo (drz)
+--- Updating  Genomy (gen)
+--- Updating  Marsjanskie mapy (mar)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest a
+
+--- Updating  Andoslaw (and)
+--- Updating  Kosmita (kos)
+--- Updating  Sadzenie papryki (spa)
+--- Updating  Gra (gra)
+--- Updating  Turysta (trs)
+--- Updating  Zbieranie pieczątek (zbp)
+--- Updating  Karnet (kar)
+--- Updating  Lista liczb (lis)
+--- Updating  Seriale (ser)
+--- Updating  Pożar (por)
+--- Updating  Splot (spl)
+--- Updating  Zgrupowanie kadry (zgr)
+--- Updating  Ciemnosc (cie)
+--- Updating  Czarny i biały (gra)
+--- Updating  Kwadraty (kwa)
+--- Updating  Flaga (fla)
+--- Updating  Las (las)
+--- Updating  Schody (sch)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest indywidualny
+
+--- Updating  Ciecie drzewa (cdr)
+--- Updating  Histogram 3D (hst)
+--- Updating  Tenis (ten)
+
+--- Invalidating ranking
+--- Done!
+
+--- Recalculating scores in contest runda-probna
+
+--- Updating  Przeciaganie liny (tug)
+--- Updating  Zbieranie czereśni (zcz)
+
+--- Invalidating ranking
+--- Done!
+

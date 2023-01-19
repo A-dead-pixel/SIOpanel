@@ -1,0 +1,107 @@
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W005) URL namespace 'contest:oioioiadmin' isn't unique. You may not be able to reverse all URLs in this namespace
+
+--- Users registered correctly ---
+
+Group          Username        First name      Last name      
+
+
+--- Superusers ---
+
+jrozek
+subczarkowski
+rszubartowski
+sufwitt
+msmolira
+lorlikowski
+blukasiewicz
+akolodziejczak
+ztalentariuszy
+
+
+--- Unassigned users ---
+
+Username        First name      Last name      
+jpniewski       Jakub           Pniewski       
+cnalezny        Cyprian         Należny        
+mkamieniecki    Mateusz         Kamieniecki    
+kmielnik        Krzysztof       Mielnik        
+pperzynski      Piotr           Perzyński      
+amiaskowska     Agnieszka       Miąskowska     
+jkedziorska     Julia           Kędziorska     
+pnowakowski     Piotr           Nowakowski     
+jrak            Jakub           Rak            
+orozek          Oskar           Rożek          
+wlamandini      Waldemar        Lamandini      
+gbernas         Grzegorz        Bernaś         
+mkycia          Marek           Kycia          
+shajderek       Szymon          Hajderek       
+adaraz          Amadeusz        Daraż          
+kstaszewska     Kalina          Staszewska     
+korlikowski     Konrad          Orlikowski     
+mwegrzyn        Michał          Węgrzyn        
+alugowski       Adam            Ługowski       
+pbulinski       Patryk          Buliński       
+ksmolira        Konstanty       Smolira        
+aslewa          Adam            Ślewa          
+jzabkiewicz     Jan             Ząbkiewicz     
+jkolinski       Jakub           Koliński       
+wmilewski       Witold          Milewski       
+bdrabinski      Bartosz         Drabiński      
+mcybulski       Mikołaj         Cybulski       
+aszymaniak      Adam            Szymaniak      
+pgrzona         Paweł           Grzona         
+mulasik         Maja            Ułasik         
+jkussowski      Jakub           Kussowski      
+edmitroca       Emilia          Dmitroca       
+kbielinski      Kajetan         Bieliński      
+bbudzinski      Bartłomiej      Budziński      
+mwawrzyniak     Mateusz         Wawrzyniak     
+mklimek         Mateusz         Klimek         
+zmroziuk        Zofia           Mroziuk        
+jpawlak         Jakub           Pawlak         
+skalewski       Stanisław       Kalewski       
+fjaszczura      Filip           Jaszczura      
+mkussowski      Mateusz         Kussowski      
+pguzinski       Piotr           Guziński       
+kkonior         Karol           Konior         
+tswiecki        Tomasz          Święcki        
+sdomanski       Szymon          Domański       
+mlozinski       Mateusz         Łoziński       
+dsmater         Dominik         Smater         
+kwesolowski     Karol           Wesołowski     
+mkollar         Mikołaj         Kollar         
+ozienkiewicz    Olga            Zienkiewicz    
+asulborska      Agata           Sulborska      
+fkycia          Franciszek      Kycia          
+mbialy          Mateusz         Biały          
+jchoma          Jakub           Choma          
+Kmajka          Kajetan         Majka          
+WRojekNowosielski Wojciech        Rojek-Nowosielski
+pchatys         patryk          chatys         
+krzysztofkjw    Krzysztof       Kujawa         
+miwachowski     Mateusz         Iwachowski     
+hwlodarski      Hubert          Włodarski      
+
+
+--- Misassigned users (lowercase group means not present) ---
+
+Username        First name      Last name       Groups          Contests       
+Traceback (most recent call last):
+  File "./manage.py", line 14, in <module>
+    execute_from_command_line(sys.argv)
+  File "/home/oioioi/.local/lib/python3.7/site-packages/django/core/management/__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "/home/oioioi/.local/lib/python3.7/site-packages/django/core/management/__init__.py", line 413, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/oioioi/.local/lib/python3.7/site-packages/django/core/management/base.py", line 354, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/home/oioioi/.local/lib/python3.7/site-packages/django/core/management/base.py", line 398, in execute
+    output = self.handle(*args, **options)
+  File "/sio2/oioioi/oioioi/talent/management/commands/talent_view_groups.py", line 129, in handle
+    id_from_group(member.group).upper(),
+  File "/sio2/oioioi/oioioi/talent/management/commands/talent_view_groups.py", line 27, in id_from_group
+    raise KeyError
+KeyError

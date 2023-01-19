@@ -1,0 +1,6 @@
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W005) URL namespace 'contest:oioioiadmin' isn't unique. You may not be able to reverse all URLs in this namespace
+uwsgi: stopped
+uwsgi: started
