@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG -rdynamic CMakeFiles/SIOpanel.dir/src/App.cpp.o -o SIOpanel  libSIOpanel-lib.a /usr/lib/liboatpp.a -latomic 

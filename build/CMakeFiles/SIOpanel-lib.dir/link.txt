@@ -1,2 +1,0 @@
-/usr/bin/ar qc libSIOpanel-lib.a "CMakeFiles/SIOpanel-lib.dir/src/App.cpp.o"
-/usr/bin/ranlib libSIOpanel-lib.a

@@ -1,6 +1,0 @@
-usage: manage.py talent_view_groups [-h] [-c] [-o] [--version] [-v {0,1,2,3}]
-                                    [--settings SETTINGS]
-                                    [--pythonpath PYTHONPATH] [--traceback]
-                                    [--no-color] [--force-color]
-                                    [--skip-checks]
-manage.py talent_view_groups: error: unrecognized arguments: �
