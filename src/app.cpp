@@ -2,13 +2,17 @@
 #include "oatpp/network/Server.hpp"
 #include "oatpp/network/tcp/server/ConnectionProvider.hpp"
 
-#include "AppComponent.hpp"
-#include "controller/controller.hpp"
-#include "utils.cpp"
-#include "templates.cpp"
+#include "app_component.hpp"
+#include "controllers/main_controller.cpp"
+#include "utils.h"
+#include "config.h"
 
 #include <unistd.h>
 #include <string>
+#include <csignal>
+#include <mutex>
+
+std::mutex exitMt,serverMt;
 
 void run() {
     /* Register Components in scope of run() method */
@@ -29,30 +33,46 @@ void run() {
 
     /* Create server which takes provided TCP connections and passes them to HTTP connection handler */
     oatpp::network::Server server(connectionProvider, connectionHandler);
-
-    /* Priny info about server port */
-    OATPP_LOGI("SIOpanel", "Server running on port %s", connectionProvider->getProperty("port").getData());
+    /* Print info about server port */
+    OATPP_LOGI("SIOpanel", "Server running on port %s.", connectionProvider->getProperty("port").getData());
 
     /* Run server */
-    server.run();
+    std::thread server_thread([&server]{server.run();});
+    serverMt.lock();
+    connectionProvider->stop();
+    connectionHandler->stop();
+    server.stop();
+    OATPP_LOGI("SIOpanel", "Server stopped.");
+    
 }
 
-char cwd[FILENAME_MAX];
-std::string scwd;
+int retnum=0;
+void cleanup(int signal_num){
+    exitMt.lock();
+    serverMt.unlock();
+    retnum=signal_num;
+}
+
 int main(){
     utils::prepare();
+    char cwd[FILENAME_MAX];
     getcwd(cwd, FILENAME_MAX);
-    scwd=std::string(cwd);
+    std::string scwd=std::string(cwd);
     printf("Running in %s\n", scwd.data());
     
-    load_templates(scwd+"/../templates/");
-    load_config(scwd+"/../SIOpanel.conf");
+    config::load_templates(scwd+"/../templates/");
+    config::load_config(scwd+"/../SIOpanel.conf");
     
     oatpp::base::Environment::init();
 
+    signal(SIGINT, cleanup);
+    signal(SIGABRT, cleanup);
+    signal(SIGTERM, cleanup);
+    
     /* Run App */
+    serverMt.lock();
     run();
 
     oatpp::base::Environment::destroy();
-    return 0;
+    return retnum;
 }

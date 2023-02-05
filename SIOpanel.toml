@@ -1,0 +1,12 @@
+[sio]
+# Base command, interpolated with ``command`` and ``outfile``.
+command_base="bash -c '(%s) > %s 2>&1'"
+#command_base="""bash -c 'ssh -tt sio@10.0.0.1 bash -c "(%s)") > %s 2>&1'"""
+# Base docker command for managing SIO. [[commands]] will use this.
+docker_base="docker-compose -f /src/talentsio/docker-compose.yml "
+# Reachable url of SIO
+url="http://localhost"
+
+[ping]
+router_base="192.168.0.%s"
+router_nums=["1", "2", "3", "11", "12", "13", "100", "101", "102", "103", "104", "105", "106", "107", "108", "109"]
