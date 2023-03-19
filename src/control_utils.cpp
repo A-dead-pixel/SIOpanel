@@ -1,19 +1,23 @@
-#include "oatpp/web/server/api/ApiController.hpp"
-#include "oatpp/core/macro/codegen.hpp"
-#include "oatpp/core/macro/component.hpp"
+#include "control_utils.h"
 
 #include "utils.h"
 #include "config.h"
-#include "controllers/main_controller.cpp"
 
 #include <string>
-#include <thread>
 #include <mutex>
 #include <fstream>
 #include <queue>
 #include <filesystem>
+#include <boost/thread/thread.hpp>
+#include <boost/chrono.hpp>
 
-queue <thread> commands;
+std::queue <boost::thread> commands;
+
+namespace controllers{
+using namespace std;
+using config::docker_base;
+
+static mutex restartMt,phaseMt,regMt,commandMt;
 
 void executeCommand(string command, string resultfile, mutex *mt){
     unique_lock <mutex> lck(*mt);
@@ -60,55 +64,21 @@ bool scheduleCommand(string body, string id, string type){
     }
     if (command=="")
         return 0;
-    string outfile="results/"+id,final_command=command_base;
+    string outfile="results/"+id,final_command=config::command_base;
     utils::insert(final_command, command);
     utils::insert(final_command, outfile);
-    unique_lock <mutex> lck(outMt);
+    unique_lock <mutex> lck(commandMt);
     if (filesystem::exists(outfile))
         return 0;
     ofstream file(outfile);
     file.flush();
     file.close();
+    // so we don't run out of memory because of the queue
+    while (commands.size()&&commands.front().try_join_for(boost::chrono::milliseconds(1)))
+        commands.pop();
+    commands.push(boost::thread(executeCommand, final_command, "results/"+id+".ret", mt));
     lck.unlock();
-    commands.push(thread(executeCommand, final_command, "results/"+id+".ret", mt));
     return 1;
 }
 
-#include OATPP_CODEGEN_BEGIN(ApiController)
-
-ENDPOINT("GET", "/control/", Controller::control_redirect) {
-    return redirect("/control/"+utils::get_unused_id()+"/")
-}
-
-ENDPOINT("GET", "/control/{id}/", Controller::get_control_panel,
-        PATH(String, id)) {
-    if (utils::checknumid(id))
-        return createResponse(Status::CODE_403, templates["403.html"]);
-    std::string outfile,result,statusle;
-    if (utils::read_whole_file(outfile, std::string("results/"+id))){
-        result=templates["result.html"];
-        if (utils::read_whole_file(status, std::string("results/"+id+".ret")))
-            status="Egzekucja zakończona "+status;
-        else
-            status="Egzekucja w trakcie...";
-        utils::insert(result, status);
-        utils::insert(result, outfile);
-    }
-    else{
-        result=templates["control_panel.html"];
-        status=utils::registration_check();
-        utils::insert(result, status);
-    }
-    return createResponse(Status::CODE_200, result);
-}
-
-ENDPOINT("POST", "/control/{id}/{type}", Controller::control_handle_post,
-        PATH(String, id), PATH(String, type), BODY_STRING(String, body)) {
-    if (utils::checknumid(id))
-        return createResponse(Status::CODE_403, templates["403.html"]);
-    if (scheduleCommand(body, id, type))
-        return redirect("/control/"+id+"/");
-    return createResponse(Status::CODE_500, templates["command_failed.html"]);
-}
-
-#include OATPP_CODEGEN_END(ApiController)
+} // namespace controllers

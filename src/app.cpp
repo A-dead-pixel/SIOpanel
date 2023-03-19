@@ -2,17 +2,20 @@
 #include "oatpp/network/Server.hpp"
 #include "oatpp/network/tcp/server/ConnectionProvider.hpp"
 
-#include "app_component.hpp"
-#include "controllers/main_controller.cpp"
-#include "utils.h"
+#include "app_component.h"
+#include "controllers/main_controller.h"
 #include "config.h"
+#include "control_utils.h"
 
 #include <unistd.h>
+#include <ctime>
+#include <filesystem>
 #include <string>
 #include <csignal>
 #include <mutex>
 
-std::mutex exitMt,serverMt;
+static std::mutex serverMt;
+static int retnum=0;
 
 void run() {
     /* Register Components in scope of run() method */
@@ -22,7 +25,7 @@ void run() {
     OATPP_COMPONENT(std::shared_ptr<oatpp::web::server::HttpRouter>, router);
 
     /* Create MyController and add all of its endpoints to router */
-    auto controller = std::make_shared<Controller>();
+    auto controller = std::make_shared<controllers::Controller>();
     router->addController(controller);
 
     /* Get connection handler component */
@@ -30,6 +33,9 @@ void run() {
 
     /* Get connection provider component */
     OATPP_COMPONENT(std::shared_ptr<oatpp::network::ServerConnectionProvider>, connectionProvider);
+    
+    /* for unblocking the connection handler or sth, see https://github.com/oatpp/oatpp/issues/173 */
+    OATPP_COMPONENT(std::shared_ptr<oatpp::network::ClientConnectionProvider>, clientConnectionProvider);
 
     /* Create server which takes provided TCP connections and passes them to HTTP connection handler */
     oatpp::network::Server server(connectionProvider, connectionHandler);
@@ -39,31 +45,33 @@ void run() {
     /* Run server */
     std::thread server_thread([&server]{server.run();});
     serverMt.lock();
-    connectionProvider->stop();
-    connectionHandler->stop();
     server.stop();
+    clientConnectionProvider->get();
+    connectionHandler->stop();
+    server_thread.join();
     OATPP_LOGI("SIOpanel", "Server stopped.");
-    
 }
 
-int retnum=0;
 void cleanup(int signal_num){
-    exitMt.lock();
     serverMt.unlock();
     retnum=signal_num;
 }
 
 int main(){
-    utils::prepare();
-    char cwd[FILENAME_MAX];
-    getcwd(cwd, FILENAME_MAX);
-    std::string scwd=std::string(cwd);
-    printf("Running in %s\n", scwd.data());
+    std::string cwd="SIOpanel_"+std::to_string(time(0));
+    if (!std::filesystem::create_directory(cwd)){
+        printf("SIOpanel: directory already exists, wait a second\n");
+        return 69;
+    }
+    chdir(cwd.data());
     
-    config::load_templates(scwd+"/../templates/");
-    config::load_config(scwd+"/../SIOpanel.conf");
+    std::filesystem::create_directory("results");
+    std::filesystem::create_directory("timestamps");
+    printf("Running in %s\n", cwd.data());
     
-    oatpp::base::Environment::init();
+    config::load_templates("../templates");
+    config::load_config("../SIOpanel.toml");
+    
 
     signal(SIGINT, cleanup);
     signal(SIGABRT, cleanup);
@@ -71,8 +79,13 @@ int main(){
     
     /* Run App */
     serverMt.lock();
+    oatpp::base::Environment::init();
     run();
-
     oatpp::base::Environment::destroy();
+
+    while (!commands.empty()){
+        commands.front().join();
+        commands.pop();
+    }
     return retnum;
 }

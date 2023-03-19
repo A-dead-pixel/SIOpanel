@@ -5,6 +5,7 @@
 
 #include "oatpp/web/server/HttpConnectionHandler.hpp"
 #include "oatpp/network/tcp/server/ConnectionProvider.hpp"
+#include "oatpp/network/tcp/client/ConnectionProvider.hpp"
 
 #include "oatpp/core/macro/component.hpp"
 
@@ -19,9 +20,22 @@ public:
    *  Create ConnectionProvider component which listens on the port
    */
   OATPP_CREATE_COMPONENT(std::shared_ptr<oatpp::network::ServerConnectionProvider>, serverConnectionProvider)([] {
-    return oatpp::network::tcp::server::ConnectionProvider::createShared({"localhost", 8000, oatpp::network::Address::IP_4});
+    return oatpp::network::tcp::server::ConnectionProvider::createShared({
+            "localhost",
+            8000,
+            oatpp::network::Address::IP_4
+        });
   }());
 
+  
+  OATPP_CREATE_COMPONENT(std::shared_ptr<oatpp::network::ClientConnectionProvider>, clientConnectionProvider)([] {
+    return oatpp::network::tcp::client::ConnectionProvider::createShared({
+            "localhost",
+            8000,
+            oatpp::network::Address::IP_4
+        });
+  }());
+  
   /**
    *  Create Router component
    */
